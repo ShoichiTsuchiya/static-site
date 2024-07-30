@@ -1,0 +1,157 @@
+$primary: #5628EE;
+
+.slider {
+    display: table;
+    padding: 6px 8px;
+    background: $primary;
+    border-radius: 6px;
+    & > div {
+        height: 30px;
+        position: relative;
+        text-align: center;
+        width: 136px;
+        span {
+            display: block;
+            color: #fff;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all .3s ease;
+        }
+        .drag {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+            width: 30px;
+            height: 30px;
+            background: rgba(#fff, .1);
+            border: 1px solid rgba(#fff, .7);
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            transition: background .3s ease;
+            border-radius: 50%;
+            svg {
+                fill: #fff;
+                stroke: none;
+                display: block;
+                width: 5px;
+                height: 8px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transition: all .3s ease;
+                transform: translate(-45%, -50%);
+            }
+            &:active {
+                cursor: grabbing;
+                cursor: -moz-grabbing;
+                cursor: -webkit-grabbing;
+                background: rgba(#fff, .3);
+            }
+            &:hover {
+                background: rgba(#fff, .2);
+            }
+        }
+        .drop {
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(#fff, .3);
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: all .3s ease;
+            border-radius: 50%;
+            .wave {
+                width: 14px;
+                height: 14px;
+                background: rgba(#fff, .15);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transition: all .3s ease;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &.active {
+            span {
+                color: rgba(#fff, .2);
+            }
+            .drop {
+                border: 1px solid rgba(#fff, .4);
+                .wave {
+                    background: rgba(#fff, .4);
+                }
+            }
+        }
+        &.hover {
+            .drop {
+                .wave {
+                    background: rgba(#fff, .4);
+                    transform: translate(-50%, -50%) scale(1.7);
+                }
+            }
+        }
+        &.enabled {
+            .drop {
+                right: 100%;
+                transform: translate(100%, 0);
+            }
+            .drag {
+                svg {
+                    transform: translate(-60%, -50%) scaleX(-1);
+                }
+            }
+        }
+    }
+}
+
+.result {
+    display: table;
+    text-align: center;
+    font-style: italic;
+    color: #6C7486;
+    font-size: 14px;
+    margin: 20px auto 0 auto;
+    transition: color .3s ease;
+    &.true {
+        color: #99A3BA;
+    }
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+// Center & dribbble
+body {
+    min-height: 100vh;
+    font-family: Roboto, Arial;
+    color: #ADAFB6;
+    background: #2F3545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .dribbble {
+        position: fixed;
+        display: block;
+        right: 20px;
+        bottom: 20px;
+        img {
+            display: block;
+            height: 28px;
+        }
+    }
+}

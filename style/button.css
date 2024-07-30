@@ -1,0 +1,141 @@
+.slider {
+  display: table;
+  padding: 6px 8px;
+  background: #5628EE;
+  border-radius: 6px;
+}
+.slider > div {
+  height: 30px;
+  position: relative;
+  text-align: center;
+  width: 136px;
+}
+.slider > div span {
+  display: block;
+  color: #fff;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.slider > div .drag {
+  cursor: move;
+  cursor: grab;
+  cursor: -webkit-grab;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  transition: background 0.3s ease;
+  border-radius: 50%;
+}
+.slider > div .drag svg {
+  fill: #fff;
+  stroke: none;
+  display: block;
+  width: 5px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-45%, -50%);
+}
+.slider > div .drag:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  background: rgba(255, 255, 255, 0.3);
+}
+.slider > div .drag:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.slider > div .drop {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+.slider > div .drop .wave {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider > div.active span {
+  color: rgba(255, 255, 255, 0.2);
+}
+.slider > div.active .drop {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.slider > div.active .drop .wave {
+  background: rgba(255, 255, 255, 0.4);
+}
+.slider > div.hover .drop .wave {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(1.7);
+}
+.slider > div.enabled .drop {
+  right: 100%;
+  transform: translate(100%, 0);
+}
+.slider > div.enabled .drag svg {
+  transform: translate(-60%, -50%) scaleX(-1);
+}
+
+.result {
+  display: table;
+  text-align: center;
+  font-style: italic;
+  color: #6C7486;
+  font-size: 14px;
+  margin: 20px auto 0 auto;
+  transition: color 0.3s ease;
+}
+.result.true {
+  color: #99A3BA;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Roboto, Arial;
+  color: #ADAFB6;
+  background: #2F3545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}/*# sourceMappingURL=button.css.map */
